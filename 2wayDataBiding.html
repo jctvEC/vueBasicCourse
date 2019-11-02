@@ -15,12 +15,12 @@
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
         <div id="app">
-            <form> 
+            <form v-on:submit="alterarNome('VAZ', $event)"> 
                 <!-- o navegador faz um "post back"
                 http://127.0.0.1:5500/2wayDataBiding.html?
                 note o ? -->
                 <input type="text" v-model="textoDigitado" />
-                <button v-on:click="alterarNome('VAZ', $event)">
+                <button type="submit">
                     Add
                 </button>
             </form>
