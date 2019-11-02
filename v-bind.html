@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+        <div id="app">
+            <img v-bind:src="srcImg" v-bind:title="titleImg">
+            <hr>
+            <a v-bind:href="url"></a> 
+            <!-- para o bind pode nao ter  o v-bind somente :propriedade-->
+
+            <p v-text = "'Aqui tem que ter aspas simples'"></p>
+
+            <hr>
+
+            <p v-text="textoLoreIpsum"></p>
+
+            <p v-html="blocohtml"></p>
+        </div>
+
+
+
+        <script>
+
+
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    //dados que vao ser mostrados na tela
+                    srcImg: "https://vuejs.org/images/logo.png",//deveria ter foto na pastas...
+                    titleImg: "Logo Vue",
+                    url: 'https://vuejs.org/',
+                    textoLoreIpsum: 'Já aqui nao, Lore Ipsum!',
+                    blocohtml: '<hr>Texto </br> <b> HTML </b> <hr>'
+                },
+                methods: {}
+            })
+
+        </script>
+    </body>
+
+</html>
