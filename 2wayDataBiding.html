@@ -15,22 +15,13 @@
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
         <div id="app">
-
             <input type="text" v-model="textoDigitado" />
-            <button v-on:click="alterarNome()">
-                <!-- <button :click="alterarNome()"> não funciona
-                    <button @click="alterarNome()"> funciona igual  -->
-                        Chamar altera nome
-                    </button>
-                    <br>
-                    <label v-text="textoDigitado"></label>
-
+            <button v-on:click="alterarNome('VAZ', $event)">
+                Add
+            </button>
         </div>
 
-
-
         <script>
-
 
             new Vue({
                 el: '#app',
@@ -39,8 +30,9 @@
                     textoDigitado: " "
                 },
                 methods: {
-                    alterarNome() {
-                        this.textoDigitado = "Andrade"
+                    alterarNome(sobrenome, event) {
+                        this.textoDigitado = sobrenome
+                        console.log(event)
 
                     }
                 }
