@@ -20,6 +20,7 @@
         <p>{{ fun2() }}</p>
         <p>{{num + 2}}</p>
          <p v-for="fruta in frutas"> {{fruta}}</p>
+         <p v-for="(fruta,index) in frutas"> {{index}} - {{fruta}}</p>
          <p>{{showFruta()}}</p>
          <p>{{metodo()}} </p>
         <p></p>{{ehVerdade ? 'Verdade' : 'Mentira'}}</p>
