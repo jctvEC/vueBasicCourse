@@ -17,8 +17,9 @@
         <p>Aluna: {{ aluno.nome }}</p>
         <p>{{ frutas[1] }}</p>
         <p>{{ fun() }}</p>
+        <p>{{ fun2() }}</p>
         <p>{{num + 2}}</p>
-        <p>{{showFruta()}}</p>
+         <p>{{showFruta()}}</p>
         <p></p>{{ehVerdade ? 'Verdade' : 'Mentira'}}</p>
     </div>
 
@@ -39,8 +40,14 @@
                 fun: () => {
                     return 'Alo mundo'
                 },
-                showFruta:(data.frutas) => {
-                    return frutas;
+                fun2: function () {
+                    return 'Alo mundo2'
+                },
+                showFruta: function ()  {
+                   return this.$data.frutas
+                   //https://stackoverflow.com/questions/36176073/what-is-vue-way-to-access-to-data-from-methods
+                    
+                    
                 }
             }
         })
