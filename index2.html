@@ -8,19 +8,15 @@
 </head>
 <body>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     
         <div id="app">
-                <span v-bind:title="msg2">
-                  <title>
-                  Pare o mouse sobre mim e veja a dica interligada dinamicamente! Nao
+                <span v-bind=:title="msg2">
+                  Pare o mouse sobre mim e veja a dica interligada dinamicamente!  {{msg2}}
                   <!-- Não mostra porra de data nenhuma aqui -->
-                  </title>                    
-                    
                 </span>
               </div>
-
-
     <script>
         
         //  window.onload = function () {  
@@ -33,6 +29,8 @@
         // }
     
     </script>
+
+
 
 
 </body>
