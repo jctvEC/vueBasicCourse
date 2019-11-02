@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso Básico de Vue</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <div id="app">
+        <p>{{ msg }} </p>
+        <p>Aluna: {{ aluno.nome }}</p>
+        <p>{{ frutas[1] }}</p>
+        <p>{{ fun() }}</p>
+        <p>{{num + 2}}</p>
+        <p>{{showFruta()}}</p>
+        <p></p>{{ehVerdade ? 'Verdade' : 'Mentira'}}</p>
+    </div>
+
+
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                //dados que vao ser mostrados na tela
+                msg: "Hello World",
+                ehVerdade: true,
+                frutas: ['amora', 'banana'],
+                aluno: { nome: 'Paula' },
+                num: 1
+            },
+            methods: {
+                fun: () => {
+                    return 'Alo mundo'
+                },
+                showFruta:(data.frutas) => {
+                    return frutas;
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
