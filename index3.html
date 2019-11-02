@@ -21,6 +21,7 @@
         <p>{{num + 2}}</p>
          <p v-for="fruta in frutas"> {{fruta}}</p>
          <p>{{showFruta()}}</p>
+         <p>{{metodo()}} </p>
         <p></p>{{ehVerdade ? 'Verdade' : 'Mentira'}}</p>
     </div>
 
@@ -49,10 +50,15 @@
                 showFruta: function ()  {
                    return this.$data.frutas[0]
                    //https://stackoverflow.com/questions/36176073/what-is-vue-way-to-access-to-data-from-methods
-                    
-                    
-                }
-            }
+                                    
+                },
+                metodo(){
+                    return this.frutas;
+                }    
+
+                
+                
+                      }
         })
 
     </script>
