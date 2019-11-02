@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso Básico de Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      {{ msg }}
+      <!-- interpolacao de dados -->
+    </div>
+
+    <div id="app2">
+      <span v-bind:title="msg2">
+        Pare o mouse sobre mim e veja a dica interligada dinamicamente! Nao
+        <!-- Não mostra porra de data nenhuma aqui -->
+      </span>
+    </div>
+
+    <div id="app3">
+      <p v-if="seen">Agora voce me viu</p>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</body>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          //dados que vao ser mostrados na tela
+          msg: "Hello World"
+        }
+      });
+
+      var app2 = new Vue({
+        el: "app2",
+        data: {
+          msg2: "Voce carregou essa pagina em" + new Date().toLocaleString()
+        }
+      });
+
+      var app3 = new Vue({
+        el: "app3",
+        data: {
+          seen: true
+        }
+      });
+    </script>
+  </body>
 </html>
