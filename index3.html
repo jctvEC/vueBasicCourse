@@ -19,17 +19,24 @@
         <p>{{ fun() }}</p>
         <p>{{ fun2() }}</p>
         <p>{{num + 2}}</p>
-         <p v-for="fruta in frutas"> {{fruta}}</p>
-         <p v-for="(fruta,index) in frutas"> {{index}} - {{fruta}}</p>
-         <p>{{showFruta()}}</p>
-         <p>{{metodo()}} </p>
+        <p v-for="fruta in frutas"> {{fruta}}</p>
+        <p v-for="(fruta,index) in frutas"> {{index}} - {{fruta}}</p>
+
+        <ul>
+            <li v-for="(value, key, index) in usuario">
+                {{index}} -> {{key}}: {{value}}
+            </li>
+        </ul>
+
+        <p>{{showFruta()}}</p>
+        <p>{{metodo()}} </p>
         <p></p>{{ehVerdade ? 'Verdade' : 'Mentira'}}</p>
     </div>
 
 
 
     <script>
-            
+
 
         var app = new Vue({
             el: '#app',
@@ -39,27 +46,32 @@
                 ehVerdade: true,
                 frutas: ['amora', 'banana'],
                 aluno: { nome: 'Paula' },
-                num: 1
+                num: 1,
+                usuario: {
+                    nome: 'juliano',
+                    genero: 'cisgenero',
+                    identSexual: 'pansexual'
+                }
             },
             methods: {
-                fun:  function () {
+                fun: function () {
                     return 'Alo mundo'
                 },
                 fun2: function () {
                     return 'Alo mundo2'
                 },
-                showFruta: function ()  {
-                   return this.$data.frutas[0]
-                   //https://stackoverflow.com/questions/36176073/what-is-vue-way-to-access-to-data-from-methods
-                                    
-                },
-                metodo(){
-                    return this.frutas;
-                }    
+                showFruta: function () {
+                    return this.$data.frutas[0]
+                    //https://stackoverflow.com/questions/36176073/what-is-vue-way-to-access-to-data-from-methods
 
-                
-                
-                      }
+                },
+                metodo() {
+                    return this.frutas;
+                }
+
+
+
+            }
         })
 
     </script>
