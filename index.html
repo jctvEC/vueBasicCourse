@@ -1,92 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Curso Básico de Vue</title>
-  </head>
-  <body>
- 
-    <div id="app">
 
-      {{msg}}
-      {{aluno.nome}}
-      {{frutas[1]}}
-      {{fun()}}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Curso Básico de Vue</title>
+</head>
 
-      
-    </div>
-
-    <div id="app">
-      {{ msg }}
-     interpolacao de dados 
-    </div> 
-
-    <div id="app2">
-      <span v-bind:title="msg2">
-        Pare o mouse sobre mim e veja a dica interligada dinamicamente! Nao
-        <!-- Não mostra porra de data nenhuma aqui -->
-      </span>
-    </div>
-
-    <div id="app3">
-      <p v-if="seen">Agora voce me viu</p>
-    </div>
+<body>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script>
-      var app = new Vue({
-        el: "#app",
-        data: {
-          //dados que vao ser mostrados na tela
-          msg: "Hello World",
-          frutas: ['a','b'],
-          aluno: {nome: 'Paula'},
-          fun: () => {
-            return 'Alo mundo';            
-          }
+  <div id="app3">
+    <p v-if="seen">Agora voce me viu</p>
+  </div>
+
+
+  <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Inverter Mensagem</button>
+      <p>{{ message }}</p>
+      <input v-model="message">  
+    </div>
+
+
+  <script>
+    var app3 = new Vue({
+      el: "#app3",
+      data: {
+        seen: true
+      }
+    });
+
+  </script>
+
+
+  <script>
+    var app5 = new Vue({
+      el: '#app-5',
+      data: {
+        message: 'Olá Vue!'
+      },
+      methods: {
+        reverseMessage: function () {
+          this.message = this.message.split('').reverse().join('')
         }
-      });
+      }
+    })
+  </script>
 
-      var app2 = new Vue({
-        el: "app2",
-        data: {
-          msg2: "Voce carregou essa pagina em" + new Date().toLocaleString()
-        }
-      });
+</body>
 
-      var app3 = new Vue({
-        el: "app3",
-        data: {
-          seen: true
-        }
-      });
-    </script>
-
-<div id="app-5">
-  <p>{{ message }}</p>
-  <button v-on:click="reverseMessage">Inverter Mensagem</button>
-
-    <p>{{ message }}</p>
-    <input v-model="message">
-
-</div>
-
-<script>
-var app5 = new Vue({
-  el: '#app-5',
-  data: {
-    message: 'Olá Vue!'
-  },
-  methods: {
-    reverseMessage: function () {
-      this.message = this.message.split('').reverse().join('')
-    }
-  }
-})
-</script>
-
-  </body>
 </html>
