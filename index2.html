@@ -12,7 +12,7 @@
 
     
         <div id="app">
-                <span v-bind=:title="msg2">
+                <span :title="msg2">
                   Pare o mouse sobre mim e veja a dica interligada dinamicamente!  {{msg2}}
                   <!-- Não mostra porra de data nenhuma aqui -->
                 </span>
@@ -21,7 +21,7 @@
         
         //  window.onload = function () {  
            var app = new Vue({
-         el: "app",
+         el: "#app",
            data: {
           msg2: "Voce carregou essa pagina em" + new Date().toLocaleString()
         }
