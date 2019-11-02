@@ -19,7 +19,7 @@
         <p>{{ fun() }}</p>
         <p>{{ fun2() }}</p>
         <p>{{num + 2}}</p>
-         <p>{{showFruta()}}</p>
+         <p v-for="fruta in frutas"> {{fruta}}</p>
         <p></p>{{ehVerdade ? 'Verdade' : 'Mentira'}}</p>
     </div>
 
@@ -39,7 +39,7 @@
                 num: 1
             },
             methods: {
-                fun: () => {
+                fun:  function () {
                     return 'Alo mundo'
                 },
                 fun2: function () {
