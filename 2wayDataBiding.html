@@ -36,6 +36,8 @@
                 },
                 methods: {
                     alterarNome(sobrenome, event) {
+                        event.preventDefault()
+                        //agora a gente consegue evitar que o post back aconteça
                         this.textoDigitado = sobrenome
                         console.log(event)
 
