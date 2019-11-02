@@ -15,7 +15,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
         <div id="app">
-            <form v-on:submit="alterarNome('VAZ', $event)"> 
+            <form v-on:submit.prevent="alterarNome('VAZ')"> 
                 <!-- o navegador faz um "post back"
                 http://127.0.0.1:5500/2wayDataBiding.html?
                 note o ? -->
@@ -35,11 +35,12 @@
                     textoDigitado: " "
                 },
                 methods: {
-                    alterarNome(sobrenome, event) {
-                        event.preventDefault()
+                    // alterarNome(sobrenome, event) {
+                        alterarNome(sobrenome) {
+                        //  event.preventDefault()
                         //agora a gente consegue evitar que o post back aconteça
                         this.textoDigitado = sobrenome
-                        console.log(event)
+                        // console.log(event)
 
                     }
                 }
