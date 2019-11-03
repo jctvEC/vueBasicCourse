@@ -11,17 +11,22 @@
 
 <body>
 
-
+    <button onclick="carregar()"> Chama mudança </button>
 
     <div id="app">
-        {{mensagem}}
+        {{message}}
     </div>
 
     <script>
+
+        function carregar (){
+            app.$mount("#app")
+        }
+
         const app = new Vue({
-            el: '#app',
+           // el: '#app',
             data: {
-                message: 'Olá Vue!'
+                message: `Olá Vue!`
             },
             //template: `<h1>{{message}}</h1>`,
             methods: {
