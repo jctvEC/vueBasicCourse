@@ -15,14 +15,9 @@
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
         <div id="app">
-            <form v-on:submit.prevent="alterarNome('VAZ')"> 
-                <!-- o navegador faz um "post back"
-                http://127.0.0.1:5500/2wayDataBiding.html?
-                note o ? -->
-                <input type="text" v-model="textoDigitado" />
-                <button type="submit">
-                    Add
-                </button>
+  
+            <input type="text" v-model="textoDigitado" v-on:keyup.enter="alterarNome('VAZ')" />
+
             </form>
         </div>
 
