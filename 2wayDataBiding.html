@@ -15,19 +15,55 @@
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
         <div id="app">
-  
-            
+
+
             <input type="text" v-model="textoDigitado" v-on:keyup.enter="alterarNome('VAZ')" />
 
             <ul>
-                <li v-for="item in array"
-                @click="alerta($event)">
-                        {{item}}
+                <li v-for="item in array" @click="alerta($event)">
+                    {{item}}
 
                 </li>
             </ul>
-           
+
+            <div>
+
+                red
+                <input @click="corP($event.target.value)" type="radio" value="red" id="red" name="red">
+                green
+                <input @click="corP($event.target.value)" type="radio" value="green" id="green" name="=green">
+                blue
+                <input @click="corP($event.target.value)" type="radio" value="blue" id="blue" name="blue">
+                gray
+                <input @click="corP($event.target.value)" type="radio" value="gray" id="gray" name="gray">
+
+                <p v-bind:class="classParagrafo">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque temporibus quod mollitia facilis
+                    nisi nostrum dicta officiis voluptatem vitae? Consectetur assumenda inventore, dolorem odit ratione
+                    rem sequi alias doloremque maiores.
+                </p>
+            </div>
+
         </div>
+
+        <style>
+            .red {
+                background-color: red;
+            }
+
+            .green {
+                background-color: green;
+            }
+
+            .blue {
+                background-color: blue;
+            }
+
+            .gray {
+                background-color: gray;
+            }
+        </style>
+
 
         <script>
 
@@ -36,17 +72,21 @@
                 data: {
                     //dados que vao ser mostrados na tela
                     textoDigitado: "",
-                    array: []
+                    array: [],
+                    classParagrafo: 'red'
                 },
                 methods: {
                     // alterarNome(sobrenome, event) {
-                        alterarNome(sobrenome) {
-                     this.array.push(this.textoDigitado)
-                     this.textoDigitado + '';
+                    alterarNome(sobrenome) {
+                        this.array.push(this.textoDigitado)
+                        this.textoDigitado + '';
 
                     },
-                    alerta(event){
+                    alerta(event) {//pode fazer jogo de if tb.. definindo um padrao ja na tag..
                         event.target.style = "background: red"
+                    },
+                    corP(cor) {
+                        this.classParagrafo = cor;
                     }
 
                 }
