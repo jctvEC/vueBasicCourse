@@ -37,7 +37,16 @@
                 gray
                 <input @click="corP($event.target.value)" type="radio" value="gray" id="gray" name="gray">
 
-                <p v-bind:class="classParagrafo">
+                <br/> <br/>
+               <button @click= "vermelho()"  type="button"> Vermelho </button>
+               <button @click= "verde()" type="button"> Verde</button>
+               <button @click= "incolor()"  type="button">  Borda</button>
+               <button @click= "borda()" type="button">  incolor</button>
+
+
+               
+
+                <p ref="firstParagraph">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque temporibus quod mollitia facilis
                     nisi nostrum dicta officiis voluptatem vitae? Consectetur assumenda inventore, dolorem odit ratione
                     rem sequi alias doloremque maiores.
@@ -46,23 +55,6 @@
 
         </div>
 
-        <style>
-            .red {
-                background-color: red;
-            }
-
-            .green {
-                background-color: green;
-            }
-
-            .blue {
-                background-color: blue;
-            }
-
-            .gray {
-                background-color: gray;
-            }
-        </style>
 
 
         <script>
@@ -72,7 +64,7 @@
                 data: {
                     //dados que vao ser mostrados na tela
                     textoDigitado: "",
-                    array: [],
+                    array: [],             
                     classParagrafo: 'red'
                 },
                 methods: {
@@ -85,8 +77,17 @@
                     alerta(event) {//pode fazer jogo de if tb.. definindo um padrao ja na tag..
                         event.target.style = "background: red"
                     },
-                    corP(cor) {
-                        this.classParagrafo = cor;
+                    vermelho() {
+                        this.$refs.firstParagraph.style.background = "red";
+                    },
+                    verde() {
+                        this.$refs.firstParagraph.style.background = "green";
+                    },
+                    borda() {
+                        this.$refs.firstParagraph.style.border = "2px solid black";
+                    },
+                    incolor() {
+                        this.$refs.firstParagraph.style.background = "white";
                     }
 
                 }
