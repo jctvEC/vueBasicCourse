@@ -14,13 +14,13 @@
     <button onclick="carregar()"> Chama mudança </button>
 
     <div id="app">
-        {{message}}
+     <!-- {{message}} -->
     </div>
 
     <script>
 
         function carregar (){
-            app.$mount("#app")
+            app.$mount("#app")//onde estou motando vai carregar automaticamente o meu template
         }
 
         const app = new Vue({
@@ -28,7 +28,7 @@
             data: {
                 message: `Olá Vue!`
             },
-            //template: `<h1>{{message}}</h1>`,
+            template: `<h1>{{message}}</h1>`,
             methods: {
             }
         })
