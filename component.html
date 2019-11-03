@@ -21,7 +21,7 @@
         Vue.component('painel',{
             data () {
                 return {
-                    titulo: 'Painel Noticias'
+                    titulo:"Painel Noticias"
 
                 }
             },
@@ -32,9 +32,10 @@
             },
             template: `
                 //nao retorna dois elementos... tem q colocaar a div...
-                <h1>{{titulo}}</h1>
-                <button @click="alertaAlgumaCoisa()"> Alerte </button>
-            
+                <div>
+                    <h1>{{titulo}}</h1>
+                    <button @click="alerteAlgumaCoisa()"> Alerte </button>
+                </div>
             `
 
 
