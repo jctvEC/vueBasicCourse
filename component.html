@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso Básico de Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <painel></painel>
+
+    </div>
+
+    <script>
+
+        Vue.component('painel',{
+            data () {
+                return {
+                    titulo: 'Painel Noticias'
+
+                }
+            },
+            methods: {
+                alerteAlgumaCoisa(){
+                    this.titulo = "alertar de alguma coisa"
+                }
+            },
+            template: `
+                //nao retorna dois elementos... tem q colocaar a div...
+                <h1>{{titulo}}</h1>
+                <button @click="alertaAlgumaCoisa()"> Alerte </button>
+            
+            `
+
+
+            }
+        )    
+
+       
+
+        const app = new Vue({
+            el: '#app'
+            }
+        )       
+      
+    </script>
+
+</body>
+
+</html>
