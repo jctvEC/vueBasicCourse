@@ -16,9 +16,16 @@
 
         <div id="app">
   
+            
             <input type="text" v-model="textoDigitado" v-on:keyup.enter="alterarNome('VAZ')" />
 
-            </form>
+            <ul>
+                <li v-for="item in array">
+                        {{item}}
+
+                </li>
+            </ul>
+           
         </div>
 
         <script>
@@ -27,15 +34,14 @@
                 el: '#app',
                 data: {
                     //dados que vao ser mostrados na tela
-                    textoDigitado: " "
+                    textoDigitado: "",
+                    array: []
                 },
                 methods: {
                     // alterarNome(sobrenome, event) {
                         alterarNome(sobrenome) {
-                        //  event.preventDefault()
-                        //agora a gente consegue evitar que o post back aconteça
-                        this.textoDigitado = sobrenome
-                        // console.log(event)
+                     this.array.push(this.textoDigitado)
+                     this.textoDigitado + '';
 
                     }
                 }
