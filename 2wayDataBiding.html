@@ -20,7 +20,8 @@
             <input type="text" v-model="textoDigitado" v-on:keyup.enter="alterarNome('VAZ')" />
 
             <ul>
-                <li v-for="item in array">
+                <li v-for="item in array"
+                @click="alerta($event)">
                         {{item}}
 
                 </li>
@@ -43,7 +44,11 @@
                      this.array.push(this.textoDigitado)
                      this.textoDigitado + '';
 
+                    },
+                    alerta(event){
+                        alert(event)
                     }
+
                 }
             })
 
